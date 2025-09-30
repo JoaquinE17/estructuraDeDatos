@@ -1,0 +1,5 @@
+3) Crear un programa para la `gestión de pedidos`. En primer lugar, *solicitar la cantidad de pedidos a gestionar*. Para cada pedido, el usuario debe ingresar un ***código de pedido y su estado actual***, el cual puede ser: `"Pendiente", "Procesando", "Enviado" o "Entregado"`. Estos datos deben almacenarse en *arreglos paralelos* (uno para el código y otro para el estado). El programa debe:
+	- **Buscar un código de pedido específico** y, si lo encuentra, *mostrar su estado actual y su posición en el arreglo*.
+	- **Obtener la cantidad de pedidos** que se encuentran en un *estado particular* (ej. "Pendiente"), ingresado por el usuario.
+	- **Solicitar al usuario** el ingreso de un *estado* y **devolver un arreglo** que contenga los *códigos de pedidos que corresponden a ese estado*.
+	- **Reorganizar el arreglo** (intercambiando elementos) de manera que *todos los pedidos "Pendientes" se muevan al inicio del arreglo*, **manteniendo su orden relativo**. Mostrar el arreglo de códigos de pedidos y sus estados después de esta operación.
