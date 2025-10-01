@@ -10,8 +10,7 @@ public class Principal {
 
 		Queue<Integer> colaModificada = new Queue<>(cantidad);
 		int referencia = Helper.getInteger("* Inserte un valor referencia (maximo): ");
-		reubicarValores(colaOriginal,colaModificada,referencia,cantidad);
-		System.out.println("  "+colaModificada);
+		System.out.println("  "+reubicarValores(colaOriginal,colaModificada,referencia,cantidad));
 
 		Queue<Integer> colaValoresMenores = new Queue<>(cantidad);
 		separarValoresMenores(colaModificada, colaValoresMenores, referencia);
@@ -26,22 +25,15 @@ public class Principal {
 			colaOriginal.add(rand.nextInt(10,100));
 		}
 	}
-	public static void reubicarValores(Queue<Integer> colaOriginal, Queue<Integer> colaModificada, int referencia, int cantidad){
-		Queue<Integer> colaMenor = new Queue<>(cantidad);
-		Queue<Integer> colaMayor = new Queue<>(cantidad);
-		while (!colaOriginal.isEmpty()) {
-			if (colaOriginal.peek() < referencia){
-				colaMenor.add(colaOriginal.pool());
+	public static Queue<Integer> reubicarValores(Queue<Integer> colaOriginal, Queue<Integer> colaModificada, int referencia, int cantidad){
+		Queue<Integer> valoresMayores = new Queue<>(colaOriginal.size());
+		int cantidadTotal = colaOriginal.size();
+		for (int i=0; i<cantidadTotal; i++){
+			if (colaOriginal.peek() > referencia){
+				valoresMayores.add(colaOriginal.remove());
 			}
-			else
-				colaMayor.add(colaOriginal.pool());
 		}
-		while (!colaMenor.isEmpty()) {
-			colaModificada.add(colaMenor.pool());
-		}
-		while (!colaMayor.isEmpty()) {
-			colaModificada.add(colaMayor.pool());
-		}
+		return colaOriginal;
 	}
 	public static void separarValoresMenores(Queue<Integer> colaModificada, Queue<Integer> colaValoresMenores, int referencia){
 		while (!colaModificada.isEmpty()){

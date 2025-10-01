@@ -1,4 +1,5 @@
-
+//package utilidades;
+//
 // Created by Julio Tentor <jtentor@fi.unju.edu.ar>
 //
 
@@ -224,7 +225,7 @@ public class Queue<ELEMENT> {
         sb.append("[" + this.data[this.head].toString());
 
         for (int cta = 1, pos = this.next(this.head); cta < this.size(); ++cta, pos = this.next(pos)) {
-            sb.append(", " + this.data[pos].toString());
+            sb.append(",\n" + this.data[pos].toString());
         }
 
         sb.append("]");
